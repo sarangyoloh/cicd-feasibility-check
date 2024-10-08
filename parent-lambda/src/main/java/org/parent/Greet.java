@@ -1,4 +1,4 @@
-package parent;
+package org.parent;
 
 public class Greet {
 
