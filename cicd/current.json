@@ -1,0 +1,12 @@
+{
+  "create": [
+    {
+      "deps_lamba_function": {
+        "create_alias": true,
+        "create_version": true
+      }
+    }
+  ],
+  "update_code": [],
+  "update_config": []
+}

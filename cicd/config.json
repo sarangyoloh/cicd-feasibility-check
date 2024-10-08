@@ -1,0 +1,7 @@
+{
+  "deps_lambda_function": {
+    "name": "deps_lambda_function_demo",
+    "handler": "org.deps.DepsHandler",
+    "project_loc": "deps_lambda"
+  }
+}
