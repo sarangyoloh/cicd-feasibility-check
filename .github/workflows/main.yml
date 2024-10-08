@@ -15,13 +15,9 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install Dependencies
-        run: |
-          pip install json
-
       - name: Run Python Script to Parse JSON
         run: |
-          python ./cicd/parse_json.py
+          python ./cicd/script.py
 
       - name: Read the output.json content
         run: |

@@ -4,7 +4,7 @@ import os
 # Define file paths
 current_file_path = "./current.json"
 config_file_path = "./config.json"
-output_file_path = "../"
+output_file_path = "../output.json"
 
 # Function to parse JSON file
 def parse_json(file_path):
