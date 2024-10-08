@@ -1,1 +1,32 @@
+name: cicd feasibility check
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+      - name: Parse File
+        run: |
+          CURRENT_FILE_PATH: ./cicd/current.json
+          
+          if [ -f "$FILE_PATH" ]; then
+            echo "Parsing 'create' array:"
+            
+            #reading the create array
+            jq -c '.create[]' $CURRENT_FILE_PATH
 
+            # Reading and printing 'update_code' array
+            echo "Parsing 'update_code' array:"
+            jq -c '.update_code[]' $CURRENT_FILE_PATH
+  
+            # Reading and printing 'update_config' array
+            echo "Parsing 'update_config' array:"
+            jq -c '.update_config[]' $CURRENT_FILE_PATH
+
+          else
+            echo "File current.json not found in the cicd directory"
+          fi
