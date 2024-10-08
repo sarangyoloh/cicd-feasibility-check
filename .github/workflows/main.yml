@@ -22,5 +22,6 @@ jobs:
       - name: Read the output.json content
         run: |
           ls
+          ls cicd
           cat ./output.json
           
