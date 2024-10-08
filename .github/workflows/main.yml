@@ -13,7 +13,7 @@ jobs:
         run: |
           CURRENT_FILE_PATH="./cicd/current.json"
           
-          if [ -f "$FILE_PATH" ]; then
+          if [ -f "$CURRENT_FILE_PATH" ]; then
             echo "Parsing 'create' array:"
             
             #reading the create array
