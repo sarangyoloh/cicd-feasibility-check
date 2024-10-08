@@ -9,25 +9,22 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v3
-      - name: Parse File
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Dependencies
         run: |
-          CURRENT_FILE_PATH="./cicd/current.json"
+          pip install json
+
+      - name: Run Python Script to Parse JSON
+        run: |
+          python ./cicd/parse_json.py
+
+      - name: Read the output.json content
+        run: |
+          ls
+          cat ./output.json
           
-          if [ -f "$CURRENT_FILE_PATH" ]; then
-            echo "Parsing 'create' array:"
-            
-            #reading the create array
-            echo "Parsing 'create' array:"
-            jq -c '.create[]' $CURRENT_FILE_PATH
-
-            # Reading and printing 'update_code' array
-            echo "Parsing 'update_code' array:"
-            jq -c '.update_code[]' $CURRENT_FILE_PATH
-  
-            # Reading and printing 'update_config' array
-            echo "Parsing 'update_config' array:"
-            jq -c '.update_config[]' $CURRENT_FILE_PATH
-
-          else
-            echo "File current.json not found in the cicd directory"
-          fi

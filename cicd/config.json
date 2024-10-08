@@ -2,6 +2,15 @@
   "deps_lambda_function": {
     "name": "deps_lambda_function_demo",
     "handler": "org.deps.DepsHandler",
+    "role_arn": "arn:aws:iam::211125348661:role/yoloh-lambda-IAMRole-sit",
+    "event_source_info": {
+
+    },
+    "timeout": 300,
+    "memory_size": 1024,
+    "environment_variables": {
+      "secret_arn": "a"
+    },
     "project_loc": "deps_lambda"
   }
 }
